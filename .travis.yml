@@ -1,0 +1,23 @@
+language: node_js
+node_js: lts/Dubnium
+services:
+  - docker
+addons:
+  apt:
+    packages:
+    - libsecret-1-0
+script:
+  - chmod +x ./scripts/deploy.sh
+deploy:
+  - provider: npm
+    api_key: $NPM_TOKEN
+    on:
+      tags: true
+      repo: yrrodriguezb/CLI-Twitter
+    email: $NPM_EMAIL
+  - provider: script
+    script: bash ./scripts/deploy.sh
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: yrrodriguezb/CLI-Twitter
