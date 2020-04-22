@@ -1,7 +1,7 @@
 {
-  "name": "twine",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@yrrodriguezb/twine",
+  "version": "1.0.3",
+  "description": "A command line Twitter client",
   "bin": {
     "twine": "./bin/twine.js"
   },
@@ -10,11 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yrrodriguezb/twine.git"
+    "url": "https://github.com/yrrodriguezb/CLI-Twitter.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yrrodriguezb/CLI-Twitter/issues"
+  },
+  "homepage": "https://github.com/yrrodriguezb/CLI-Twitter#readme",
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
