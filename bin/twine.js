@@ -1,10 +1,7 @@
-const CredentialManager = require('../lib/credential-manager')
+const program = require('commander')
+const pkg = require('../package.json')
 
-async function main () {
-    const credentials = new CredentialManager('twine')
-    let [ key, secret ] = await credentials.getKeyAndSecret()
-    console.log(key, secret)    
-}
-
-
-main().catch(console.error)
+program
+    .version(pkg.version)
+    .command('configure', 'Configure Twitter-related credentials')
+    .parse(process.argv)

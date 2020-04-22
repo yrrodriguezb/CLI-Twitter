@@ -6,7 +6,7 @@
     "twine": "./bin/twine.js"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha"
+    "test": "nyc mocha  --recursive"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "dirty-chai": "^2.0.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
@@ -25,12 +26,17 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
     "sinon": "^9.0.2"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "commander": "^5.0.0",
     "configstore": "^5.0.1",
     "eslint-plugin-mocha": "^6.3.0",
     "inquirer": "^7.1.0",
-    "keytar": "^5.5.0"
+    "keytar": "^5.5.0",
+    "oauth-1.0a": "^2.2.4",
+    "opn": "^6.0.0"
   }
 }
