@@ -15,7 +15,7 @@ const configure = {
 				validate: util.notEmpty
 			},
 			{
-				type: 'input',
+				type: 'password',
 				name: 'secret',
 				message: 'Enter your Twitter API secret:',
 				validate: util.notEmpty

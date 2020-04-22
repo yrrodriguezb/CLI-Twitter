@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const chai = require('chai')
 const expect = chai.expect
@@ -58,7 +58,7 @@ describe('the configure module', () => {
 
         sandbox.stub(util, 'openBrowser').returns('')
 
-        sandbox.spy(console, 'log')
+        sandbox.stub(console, 'log')
 
         await configure.account('twine-test')
 
@@ -74,7 +74,8 @@ describe('the configure module', () => {
         sandbox.restore()
     })
 
-    after((done) => {
-		fs.unlink(path.join(process.env.HOME, '.config', 'configstore', 'twine-test.json'), done)
+    after(async () => {
+		await credentials.clearAll()
+		await fs.unlink(path.join(process.env.HOME, '.config', 'configstore', 'twine-test.json'))
 	})
 })
